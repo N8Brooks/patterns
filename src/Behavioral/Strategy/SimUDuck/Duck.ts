@@ -32,7 +32,7 @@ export class MallardDuck extends Duck {
   _flyBehavior = new FlyWithWings();
 
   display() {
-    console.log("I'm a real Mallard duck");
+    console.log("I'm a real mallard duck");
   }
 }
 
@@ -41,7 +41,7 @@ export class RedheadDuck extends Duck {
   _flyBehavior = new FlyWithWings();
 
   display() {
-    console.log("idk");
+    console.log("I'm a readhead duck");
   }
 }
 
@@ -50,6 +50,15 @@ export class RubberDuck extends Duck {
   _flyBehavior = new FlyNoWay();
 
   display() {
-    console.log("idk");
+    console.log("I'm a rubber duck");
+  }
+}
+
+export class ModelDuck extends Duck {
+  _quackBehavior = new Quack();
+  _flyBehavior = new FlyNoWay();
+
+  display() {
+    console.log("I'm a model duck");
   }
 }
