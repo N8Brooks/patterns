@@ -1,5 +1,6 @@
-import { MallardDuck, ModelDuck } from "./Duck";
-import { FlyRocketPowered } from "./FlyBehavior";
+import MallardDuck from "./Duck/MallardDuck";
+import ModelDuck from "./Duck/ModelDuck";
+import FlyRocketPowered from "./FlyBehavior/FlyRocketPowered";
 
 function miniDuckSimulator() {
   const mallard = new MallardDuck();
