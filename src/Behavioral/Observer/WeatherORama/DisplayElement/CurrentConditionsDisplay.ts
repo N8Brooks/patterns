@@ -8,13 +8,13 @@ export default class CurrentConditionsDisplay implements Observer, DisplayElemen
   private weatherData;
 
   constructor(weatherData: WeatherData) {
-    this.weatherData = WeatherData;
+    this.weatherData = weatherData;
     weatherData.registerObserver(this);
   }
 
-  update(temperature: number, humidity: number): void {
-    this._temperature = temperature;
-    this._humidity = humidity;
+  update(): void {
+    this._humidity = this.weatherData.humidity;
+    this._temperature = this.weatherData.temperature;
     this.display();
   }
 

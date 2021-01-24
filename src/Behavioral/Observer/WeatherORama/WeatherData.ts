@@ -20,9 +20,7 @@ export default class WeatherData implements Subject {
   }
 
   notifyObservers(): void {
-    for (const observer of this.observers) {
-      observer.update(this._temperature, this._humidity, this._pressure);
-    }
+    this.observers.forEach((observer) => observer.update());
   }
 
   registerObserver(observer: Observer): void {
@@ -33,10 +31,22 @@ export default class WeatherData implements Subject {
     this.notifyObservers();
   }
 
-  setMeasurements(temperature: number, humidity: number, pressure: number): void {
+  setMeasurements(temperature: number, pressure: number, humidity: number): void {
     this._temperature = temperature;
-    this._humidity = humidity;
     this._pressure = pressure;
+    this._humidity = humidity;
     this.measurementsChanged();
+  }
+
+  get temperature(): number {
+    return this._temperature;
+  }
+
+  get humidity(): number {
+    return this._humidity;
+  }
+
+  get pressure(): number {
+    return this._pressure;
   }
 }
