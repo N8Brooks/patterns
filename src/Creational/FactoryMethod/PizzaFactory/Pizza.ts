@@ -1,11 +1,13 @@
 export abstract class Pizza {
   protected abstract _name: string;
+  protected abstract _cheese: string;
   protected abstract _dough: string;
   protected abstract _sauce: string;
   protected toppings: Array<string> = [];
 
   prepare(): void {
     console.log(`preparing a ${this._name} pizza...`);
+    console.log(`features ${this._cheese}, ${this._dough}, ${this._sauce}`);
   }
 
   bake(): void {
@@ -27,6 +29,7 @@ export abstract class Pizza {
 
 export class NYStyleCheesePizza extends Pizza {
   _name = "New york style cheese";
+  _cheese = "Mozzarella cheese";
   _dough = "Thin crust dough";
   _sauce = "Marinara sauce";
 
@@ -38,6 +41,7 @@ export class NYStyleCheesePizza extends Pizza {
 
 export class NYStyleVeggiePizza extends Pizza {
   _name = "New york style veggie";
+  _cheese = "Mozzarella cheese";
   _dough = "Thin crust dough";
   _sauce = "Marinara sauce";
 
@@ -50,6 +54,7 @@ export class NYStyleVeggiePizza extends Pizza {
 
 export class NYStylePepperoniPizza extends Pizza {
   _name = "New york style pepperoni";
+  _cheese = "Mozzarella cheese";
   _dough = "Thin crust dough";
   _sauce = "Marinara sauce";
 
@@ -62,6 +67,7 @@ export class NYStylePepperoniPizza extends Pizza {
 
 export class NYStyleClamPizza extends Pizza {
   _name = "New york style clam";
+  _cheese = "Mozzarella cheese";
   _dough = "Thin crust dough";
   _sauce = "Marinara sauce";
 
@@ -74,7 +80,8 @@ export class NYStyleClamPizza extends Pizza {
 
 export class ChicagoStyleCheesePizza extends Pizza {
   _name = "Chicago style deep dish cheese";
-  _dough = "Thin crust dough";
+  _cheese = "Mozzarella cheese";
+  _dough = "Thick crust dough";
   _sauce = "Marinara sauce";
 
   constructor() {
@@ -85,7 +92,8 @@ export class ChicagoStyleCheesePizza extends Pizza {
 
 export class ChicagoStyleVeggiePizza extends Pizza {
   _name = "Chicago style deep dish veggie";
-  _dough = "Thin crust dough";
+  _cheese = "Mozzarella cheese";
+  _dough = "Thick crust dough";
   _sauce = "Marinara sauce";
 
   constructor() {
@@ -97,7 +105,8 @@ export class ChicagoStyleVeggiePizza extends Pizza {
 
 export class ChicagoStylePepperoniPizza extends Pizza {
   _name = "Chicago style deep dish pepperoni";
-  _dough = "Thin crust dough";
+  _cheese = "Mozzarella cheese";
+  _dough = "Thick crust dough";
   _sauce = "Marinara sauce";
 
   constructor() {
@@ -109,7 +118,8 @@ export class ChicagoStylePepperoniPizza extends Pizza {
 
 export class ChicagoStyleClamPizza extends Pizza {
   _name = "Chicago style deep dish clam";
-  _dough = "Thin crust dough";
+  _cheese = "Mozzarella cheese";
+  _dough = "Thick crust dough";
   _sauce = "Marinara sauce";
 
   constructor() {
