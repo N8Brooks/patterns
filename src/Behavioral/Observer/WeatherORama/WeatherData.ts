@@ -14,26 +14,26 @@ export default class WeatherData implements Subject {
     this._pressure = 0;
   }
 
-  removeObserver(observer: Observer) {
+  removeObserver(observer: Observer): void {
     const index = this.observers.indexOf(observer);
     0 <= index && this.observers.splice(index, 1);
   }
 
-  notifyObservers() {
+  notifyObservers(): void {
     for (const observer of this.observers) {
       observer.update(this._temperature, this._humidity, this._pressure);
     }
   }
 
-  registerObserver(observer: Observer) {
+  registerObserver(observer: Observer): void {
     this.observers.push(observer);
   }
 
-  measurementsChanged() {
+  measurementsChanged(): void {
     this.notifyObservers();
   }
 
-  setMeasurements(temperature: number, humidity: number, pressure: number) {
+  setMeasurements(temperature: number, humidity: number, pressure: number): void {
     this._temperature = temperature;
     this._humidity = humidity;
     this._pressure = pressure;
