@@ -6,7 +6,7 @@ export default class RedheadDuck extends Duck {
   _quackBehavior = new MuteQuack();
   _flyBehavior = new FlyWithWings();
 
-  display() {
-    console.log("I'm a readhead duck");
+  display(): void {
+    console.log("I'm a redhead duck");
   }
 }

@@ -6,7 +6,7 @@ export default class ModelDuck extends Duck {
   _quackBehavior = new Quack();
   _flyBehavior = new FlyNoWay();
 
-  display() {
+  display(): void {
     console.log("I'm a model duck");
   }
 }

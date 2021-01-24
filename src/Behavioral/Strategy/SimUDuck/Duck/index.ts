@@ -10,7 +10,7 @@ export default abstract class Duck {
     this._quackBehavior = quackBehavior;
   }
 
-  performQuack() {
+  performQuack(): void {
     this._quackBehavior.quack();
   }
 
@@ -18,11 +18,11 @@ export default abstract class Duck {
     this._flyBehavior = flyBehavior;
   }
 
-  performFly() {
+  performFly(): void {
     this._flyBehavior.fly();
   }
 
-  performSwim() {
+  performSwim(): void {
     console.log("All ducks float, even decoys.");
   }
 }

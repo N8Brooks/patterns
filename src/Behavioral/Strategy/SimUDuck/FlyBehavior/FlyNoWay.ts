@@ -1,7 +1,7 @@
 import FlyBehavior from ".";
 
 export default class FlyWithWings implements FlyBehavior {
-  fly() {
+  fly(): void {
     console.log("Flying!");
   }
 }

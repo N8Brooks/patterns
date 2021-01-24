@@ -6,7 +6,7 @@ export default class MallardDuck extends Duck {
   _quackBehavior = new Quack();
   _flyBehavior = new FlyWithWings();
 
-  display() {
+  display(): void {
     console.log("I'm a real mallard duck");
   }
 }

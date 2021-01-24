@@ -6,7 +6,7 @@ export default class RubberDuck extends Duck {
   _quackBehavior = new Squeak();
   _flyBehavior = new FlyNoWay();
 
-  display() {
+  display(): void {
     console.log("I'm a rubber duck");
   }
 }

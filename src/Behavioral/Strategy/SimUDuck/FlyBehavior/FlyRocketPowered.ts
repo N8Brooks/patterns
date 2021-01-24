@@ -1,7 +1,7 @@
 import FlyBehavior from ".";
 
 export default class FlyRocketPowered implements FlyBehavior {
-  fly() {
+  fly(): void {
     console.log("Rocket powered!");
   }
 }
