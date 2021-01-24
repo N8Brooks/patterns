@@ -1,6 +1,6 @@
 import Beverage from "./Beverage";
 
-export abstract class CondimentDecorator extends Beverage {
+abstract class CondimentDecorator extends Beverage {
   protected _beverage: Beverage;
 
   constructor(beverage: Beverage) {
