@@ -1,3 +1,3 @@
-export default abstract class QuackBehavior {
-  abstract quack(): void;
+export default interface QuackBehavior {
+  quack(): void;
 }

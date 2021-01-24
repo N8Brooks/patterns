@@ -1,6 +1,6 @@
 import QuackBehavior from ".";
 
-export default class MuteQuack extends QuackBehavior {
+export default class MuteQuack implements QuackBehavior {
   quack() {
     console.log("...");
   }

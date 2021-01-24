@@ -1,3 +1,3 @@
-export default abstract class FlyBehavior {
-  abstract fly(): void;
+export default interface FlyBehavior {
+  fly(): void;
 }

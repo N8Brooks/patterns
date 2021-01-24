@@ -1,6 +1,6 @@
 import FlyBehavior from ".";
 
-export default class FlyNoWay extends FlyBehavior {
+export default class FlyNoWay implements FlyBehavior {
   fly() {
     console.log("Does nothing...");
   }
