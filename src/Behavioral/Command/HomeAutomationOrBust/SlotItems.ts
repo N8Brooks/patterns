@@ -65,18 +65,42 @@ export class Stereo {
   }
 }
 
+export enum fanSpeed {
+  off = 0,
+  low = 1,
+  med = 2,
+  high = 3,
+}
+
 export class CeilingFan {
   private _name: string;
+  private _speed: fanSpeed = fanSpeed.off;
 
   constructor(name: string) {
     this._name = name;
   }
 
-  on(): void {
-    console.log(`${this._name} fan is now on`);
-  }
-
   off(): void {
     console.log(`${this._name} fan is now off`);
+    this._speed = fanSpeed.off;
+  }
+
+  low(): void {
+    console.log(`${this._name} fan is now on low`);
+    this._speed = fanSpeed.low;
+  }
+
+  medium(): void {
+    console.log(`${this._name} fan is now on medium`);
+    this._speed = fanSpeed.med;
+  }
+
+  high(): void {
+    console.log(`${this._name} fan is now on high`);
+    this._speed = fanSpeed.high;
+  }
+
+  get speed(): fanSpeed {
+    return this._speed;
   }
 }

@@ -11,6 +11,10 @@ export class GarageDoorUpCommand implements Command {
   execute(): void {
     this.garageDoor.up();
   }
+
+  undo(): void {
+    this.garageDoor.down();
+  }
 }
 
 export class GarageDoorDownCommand implements Command {
@@ -22,6 +26,10 @@ export class GarageDoorDownCommand implements Command {
 
   execute(): void {
     this.garageDoor.down();
+  }
+
+  undo(): void {
+    this.garageDoor.up();
   }
 }
 
@@ -35,6 +43,10 @@ export class GarageDoorStopCommand implements Command {
   execute(): void {
     this.garageDoor.stop();
   }
+
+  undo(): void {
+    // pass
+  }
 }
 
 export class GarageDoorLightOnCommand implements Command {
@@ -47,6 +59,10 @@ export class GarageDoorLightOnCommand implements Command {
   execute(): void {
     this.garageDoor.lightOn();
   }
+
+  undo(): void {
+    this.garageDoor.lightOff();
+  }
 }
 
 export class GarageDoorLightOffCommand implements Command {
@@ -58,5 +74,9 @@ export class GarageDoorLightOffCommand implements Command {
 
   execute(): void {
     this.garageDoor.lightOff();
+  }
+
+  undo(): void {
+    this.garageDoor.lightOn();
   }
 }

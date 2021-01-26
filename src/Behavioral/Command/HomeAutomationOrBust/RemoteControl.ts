@@ -1,15 +1,16 @@
-import Command from "./Commands";
-import { NoCommand } from "./Commands/NoCommand";
+import Command from "./Command";
+import { NoCommand } from "./Command/NoCommand";
 
 export default class RemoteControl {
   private onCommands: Array<Command>;
   private offCommands: Array<Command>;
-  slots = 7;
+  private noCommand = new NoCommand();
+  private undoCommand = new NoCommand();
+  private slots = 8;
 
   constructor() {
-    const noCommand = new NoCommand();
-    this.onCommands = new Array(this.slots).fill(noCommand);
-    this.offCommands = new Array(this.slots).fill(noCommand);
+    this.onCommands = new Array(this.slots).fill(this.noCommand);
+    this.offCommands = new Array(this.slots).fill(this.noCommand);
   }
 
   setCommand(slot: number, onCommand: Command, offCommand: Command): void {
@@ -22,11 +23,17 @@ export default class RemoteControl {
   }
 
   onButtonWasPushed(slot: number): void {
-    this.onCommands[slot].execute();
+    this.onCommands[slot] != this.noCommand && this.onCommands[slot].execute();
+    this.undoCommand = this.onCommands[slot];
   }
 
   offButtonWasPushed(slot: number): void {
-    this.offCommands[slot].execute();
+    this.onCommands[slot] != this.noCommand && this.offCommands[slot].execute();
+    this.undoCommand = this.offCommands[slot];
+  }
+
+  undoButtonWasPushed(): void {
+    this.undoCommand.undo();
   }
 
   toString(): string {

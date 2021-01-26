@@ -11,6 +11,10 @@ export class StereoOnCommand implements Command {
   execute(): void {
     this.stereo.on();
   }
+
+  undo(): void {
+    this.stereo.off();
+  }
 }
 
 export class StereoOffCommand implements Command {
@@ -22,6 +26,10 @@ export class StereoOffCommand implements Command {
 
   execute(): void {
     this.stereo.off();
+  }
+
+  undo(): void {
+    this.stereo.on();
   }
 }
 
@@ -37,6 +45,11 @@ export class StereoOnWithCDCommand implements Command {
     this.stereo.setCD();
     this.stereo.volume = 11;
   }
+
+  undo(): void {
+    this.stereo.volume = 0;
+    this.stereo.off();
+  }
 }
 
 export class StereoSetDVDCommand implements Command {
@@ -49,6 +62,10 @@ export class StereoSetDVDCommand implements Command {
   execute(): void {
     this.stereo.setDVD();
   }
+
+  undo(): void {
+    // pass
+  }
 }
 
 export class StereoSetRadioCommand implements Command {
@@ -60,5 +77,9 @@ export class StereoSetRadioCommand implements Command {
 
   execute(): void {
     this.stereo.setRadio();
+  }
+
+  undo(): void {
+    // pass
   }
 }
