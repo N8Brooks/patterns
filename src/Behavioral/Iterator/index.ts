@@ -1,4 +1,4 @@
-import { DinerMenuIterator, LunchMenuIterator, MenuItem, MenuItemIterator } from "./Restaurant";
+import { DinerMenuIterator, LunchMenuIterator, MenuItem, Waitress } from "./Restaurant";
 
 function main() {
   const lunch = new LunchMenuIterator(
@@ -7,21 +7,9 @@ function main() {
 
   const dinner = new DinerMenuIterator([new MenuItem("Pizza", 10), new MenuItem("Alfredo", 11), new MenuItem("Tacos", 9)]);
 
-  console.log("Lunch:");
-  displayMenu(lunch);
+  const waitress = new Waitress([lunch, dinner]);
 
-  console.log();
-  console.log("Dinner:");
-  displayMenu(dinner);
-}
-
-function displayMenu(menuItemIterator: MenuItemIterator) {
-  const it = menuItemIterator.menuItemIterator();
-  let result = it.next();
-  while (!result.done) {
-    console.log(result.value.toString());
-    result = it.next();
-  }
+  waitress.displayMenus();
 }
 
 main();
